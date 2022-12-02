@@ -3,16 +3,27 @@ import './App.css';
 
 function App() {
 
-  const list = ["Pawan", "Rohan", "Samyak"];
+  const list = [
+    {name: "Pawan" , age:21},
+    {name: "Rohan", age:25},
+    {name: "Saurabh", age:26},
+  ];
+
   return (
     <div className = 'App'>
-       {list.map((name)=>{
-        return(
-          <h1>{name}</h1>
-        )
-       })}
+    {list.map((user)=>{
+      return(
+        <User/>
+      )
+    })}
     </div>
   );
+}
+
+const User = (props)=>{
+  return(
+    <div>{props.name} {props.age}</div>
+  )
 }
 
 export default App;

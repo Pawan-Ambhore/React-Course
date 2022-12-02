@@ -3,12 +3,14 @@ import './App.css';
 
 function App() {
 
-  const isGreen = false;
+  const list = ["Pawan", "Rohan", "Samyak"];
   return (
     <div className = 'App'>
-      <h1 style={{color: isGreen ? "Green" : "red"}}>Check the color</h1>
-
-      {isGreen && <button>This is button</button>}
+       {list.map((name)=>{
+        return(
+          <h1>{name}</h1>
+        )
+       })}
     </div>
   );
 }

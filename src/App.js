@@ -4,20 +4,29 @@ import {useState} from 'react'
 
 function App() {
 
-  // const [show , setShow] = useState(true);
-  const [pageColor, setPageColor] = useState("red");
+  const [count, setcount] = useState(0);
+
+  const increment = () => {
+    setcount(count + 1);
+  };
+
+  const decrement = () => {
+    setcount(count - 1);
+  };
+
+  const reset = () => {
+    setcount(0);
+  }
 
   return (
     <>
-    <div className = 'App' style={{backgroundColor: pageColor }}>
-       <button onClick={()=>{
-          // setShow(!show)
-          setPageColor(pageColor === "red" ? "blue" : "red")
-          
-       }}>
-        Click here to Change the color
-       </button>
-      {/* {show && <h1>Hello world!</h1>} */}
+    <div className = 'App' >
+     <button onClick={increment} >Increase</button>
+     <button onClick={decrement} >Decrease</button>
+     <button onClick={reset} >Set to zero</button>
+
+     <h1>Count: {count}</h1>
+
     </div>
     </>
   );

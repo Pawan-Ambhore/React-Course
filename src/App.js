@@ -1,26 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react'
 
 function App() {
 
-  const list = [
-    {name: "Pawan" , capable:true},
-    {name: "Rohan", capable:true},
-    {name: "Saurabh", capable:false},
-    {name: "Samyak", capable:false},
+  const [age , setAge] = useState(0)
 
-  ];
+  const increase =()=>{
+    setAge(age+1)
+    console.log(age);
+  }
+
 
   return (
+    <>
     <div className = 'App'>
-    {list.map((user, key)=>{
-      return(
-        <div>
-          {user.capable ? user.name : null}
-        </div>
-      )
-    })}
+    <h1 >
+     {age}
+    </h1>
+    <button onClick={increase}>Increse age by one</button>
     </div>
+    </>
   );
 }
 

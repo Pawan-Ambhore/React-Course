@@ -4,18 +4,20 @@ import {useState} from 'react'
 
 function App() {
 
-  const [inputValue , setInputValue] = useState("");
-
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
-    console.log(inputValue);
-  }
+  // const [show , setShow] = useState(true);
+  const [pageColor, setPageColor] = useState("red");
 
   return (
     <>
-    <div className = 'App'>
-       <input type="text" onChange={handleInputChange}/>
-       <h1>{inputValue}</h1>
+    <div className = 'App' style={{backgroundColor: pageColor }}>
+       <button onClick={()=>{
+          // setShow(!show)
+          setPageColor(pageColor === "red" ? "blue" : "red")
+          
+       }}>
+        Click here to Change the color
+       </button>
+      {/* {show && <h1>Hello world!</h1>} */}
     </div>
     </>
   );

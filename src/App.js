@@ -4,26 +4,26 @@ import './App.css';
 function App() {
 
   const list = [
-    {name: "Pawan" , age:21},
-    {name: "Rohan", age:25},
-    {name: "Saurabh", age:26},
+    {name: "Pawan" , capable:true},
+    {name: "Rohan", capable:true},
+    {name: "Saurabh", capable:false},
+    {name: "Samyak", capable:false},
+
   ];
 
   return (
     <div className = 'App'>
-    {list.map((user)=>{
+    {list.map((user, key)=>{
       return(
-        <User/>
+        <div>
+          {user.capable ? user.name : null}
+        </div>
       )
     })}
     </div>
   );
 }
 
-const User = (props)=>{
-  return(
-    <div>{props.name} {props.age}</div>
-  )
-}
+
 
 export default App;

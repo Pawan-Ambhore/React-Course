@@ -2,21 +2,15 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const isGreen = false;
   return (
-    <div>
-      <TaskOne name="Pawan" role="Learner"/>
+    <div className = 'App'>
+      <h1 style={{color: isGreen ? "Green" : "red"}}>Check the color</h1>
+
+      {isGreen && <button>This is button</button>}
     </div>
   );
 }
-
-const TaskOne =(props)=>{
-  return (
-    <div className="App">
-       <h1>{props.name}</h1>
-       <h1>{props.role}</h1>
-
-    </div>
-  )
-} 
 
 export default App;
